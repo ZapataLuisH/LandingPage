@@ -493,3 +493,59 @@ header .menu-bar-pc .top-redes {
 .main .contacto .formulario .formulario_contacto input[type="submit"]:hover {
   background: #745f35;
 }
+/*---------------------------------------*/
+/*---           Pie de pagina         ---*/
+/*---------------------------------------*/
+footer {
+  margin-top: 2.25rem;
+  background: #141618;
+  padding: 5.625rem 0;
+  text-align: center;
+  color: #fff;
+}
+footer .bottom-redes {
+  margin-top: 2.25rem;
+}
+footer .bottom-redes a {
+  padding: 0 0.5625rem;
+  color: #fff;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -transition: all 0.3s ease;
+}
+footer .bottom-redes a:hover {
+  color: #b4975a;
+}
+/*---------------------------------------*/
+/*---        Media Queries            ---*/
+/*---------------------------------------*/
+@media all and (max-width: 1500px) {
+  .main .portada .col .texto {
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
+  }
+}
+@media all and (max-width: 1199px) {
+  .main .portada .col .foto {
+    display: none;
+  }
+  .main .portada .col .texto {
+    width: 100%;
+  }
+}
+@media all and (max-width: 980px) {
+  .main .nosotros .container .col.izq {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #eaeaea;
+    text-align: center;
+    display: block;
+    padding: 0;
+    margin-bottom: 2.25rem;
+  }
+  .main .nosotros .container .col.der {
+    width: 100%;
+    padding-left: 0;
+    text-align: justify;
+  }
+}
