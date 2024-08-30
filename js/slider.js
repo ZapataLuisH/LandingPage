@@ -1,5 +1,5 @@
-
-//propiedades slider
+(function () {
+    //propiedades slider
 var propSlider = {
     slider: document.getElementById('slider'),
     primerSlide: null
@@ -25,3 +25,4 @@ var metSlider = {
 
 }
 metSlider.inicio();
+})();

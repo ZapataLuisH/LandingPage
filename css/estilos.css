@@ -33,7 +33,7 @@ a {
   transition: all 0.3s ease;
 }
 a:hover {
-  color: rgba(48, 49, 51, 0.5);
+  color: #b4975a;
 }
 .titulo-seccion h2 {
   font-size: 3.125rem;
