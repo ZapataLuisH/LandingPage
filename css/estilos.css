@@ -94,6 +94,9 @@ a:hover {
 .menu-bar-pc .logo {
   max-width: 3.125rem;
 }
+.menu-bar-pc .menu-principal a {
+  margin: 1rem;
+}
 .menu-bar-pc .menu-principal a .top-redes {
   padding: 0 0.5625rem;
 }
