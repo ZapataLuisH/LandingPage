@@ -21,6 +21,7 @@ var metScroll = {
     },
 
     moverse: function(e){
+        clearInterval(propScroll.intervalo);
         e.preventDefault();
         propScroll.destino = this.getAttribute('href');
         propScroll.seccion_distancia= document.querySelector(propScroll.destino).offsetTop -94;
@@ -45,6 +46,7 @@ var metScroll = {
     },
 
     subir: function(e){
+        clearInterval(propScroll.intervalo);
         e.preventDefault();
         propScroll.posicion = window.scrollY;
         propScroll.intervalo = setInterval(function(){
@@ -53,6 +55,8 @@ var metScroll = {
                 if(propScroll.posicion <=0){
                     clearInterval(propScroll.intervalo);
                 }
+            }else{
+                return;
             }
             window.scrollTo(0, propScroll.posicion);
         }, 15);
