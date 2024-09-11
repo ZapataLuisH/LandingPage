@@ -1,0 +1,62 @@
+//variables del objeto scroll
+var propScroll = {
+    posicion: window.scrollY,
+    scroll_suave: document.getElementsByClassName('scroll-suave'),
+    volver_arriba: document.getElementsByClassName('volver-arriba'),
+    destino: null,
+    seccion_distancia: null,
+    intervalo: null
+}
+
+
+//metodos del objeto scroll
+var metScroll = {
+    inicio: function(){
+        for(var i = 0; i< propScroll.scroll_suave.length;i++){
+            propScroll.scroll_suave[i].addEventListener('click',metScroll.moverse);
+        }
+        for(var i = 0; i< propScroll.volver_arriba.length;i++){
+            propScroll.volver_arriba[i].addEventListener('click',metScroll.subir);
+        }
+    },
+
+    moverse: function(e){
+        e.preventDefault();
+        propScroll.destino = this.getAttribute('href');
+        propScroll.seccion_distancia= document.querySelector(propScroll.destino).offsetTop -94;
+        propScroll.posicion = window.scrollY;
+        propScroll.intervalo = setInterval(function(){
+            if(propScroll.posicion < propScroll.seccion_distancia){
+                propScroll.posicion += 30;
+                if(propScroll.posicion >= propScroll.seccion_distancia){
+                    clearInterval(propScroll.intervalo);
+                }
+            }else{
+                propScroll.posicion -= 30;
+                if(propScroll.posicion <= propScroll.seccion_distancia){
+                    clearInterval(propScroll.intervalo);
+                }
+            }
+            
+            
+            window.scrollTo(0,propScroll.posicion);
+
+        }, 15);
+    },
+
+    subir: function(e){
+        e.preventDefault();
+        propScroll.posicion = window.scrollY;
+        propScroll.intervalo = setInterval(function(){
+            if(propScroll.posicion > 0){
+                propScroll.posicion -= 30;
+                if(propScroll.posicion <=0){
+                    clearInterval(propScroll.intervalo);
+                }
+            }
+            window.scrollTo(0, propScroll.posicion);
+        }, 15);
+        
+    }
+}
+metScroll.inicio();

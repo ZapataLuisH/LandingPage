@@ -1,3 +1,4 @@
+(function(){
 //propiedades del objeto formulario
 var propFormulario = {
     formulario: document.formulario_contacto,
@@ -50,4 +51,7 @@ validarInputs: function(event){
 
  }
 metFormulario.inicio();
+
+
+}())
 
