@@ -156,9 +156,11 @@ a {
     text-align: center;
     padding: 1.25rem 2.25rem;
     width: 80%;
+    height: 100vh;
     -webkit-transition: all .3s ease;
     -o-transition: all .3s ease;
     transition: all .3s ease;
+    overflow-y: auto;
 
     &.active{
       left: 0;
@@ -168,16 +170,23 @@ a {
       margin-bottom: 0.625rem;
       a{
         padding: 0 0.5625rem;
+        
       }
     }
 
-    .menu-principal{
-      a{
-        display: block;
-        padding: 0.625rem 0;
-        border-top: 1px solid @gris-claro; 
-      }
+    .menu-principal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; // Espaciado equitativo entre los botones
+
+    a {
+      display: block;
+      padding: 2rem 0;  // Aumentar el padding para botones más grandes
+      border-top: 1px solid @gris-claro;
+      font-size: 1.5rem;  // Aumentar el tamaño de fuente
+      text-align: center;
     }
+  }
   }
 }
 
@@ -479,6 +488,7 @@ a {
             width:30%;
             text-align: center;
             font-size: 2.1875rem;
+            display: none;
           }
         }
 
@@ -546,6 +556,7 @@ a {
     padding: 2.25rem;
     margin-top: -6.25rem;
     width: 90%;
+    box-shadow: 0 4px 8px fade(@negro-custom, 30%);
 
     .formulario_contacto{
       .input-group{
