@@ -28,9 +28,11 @@ blurInput: function(){
     }
 },
 validarInputs: function(event){
+    var isValid = true;
     for(var i = 0; i<propFormulario.elementos.length; i++){
         if(propFormulario.elementos[i].value == ""){
             event.preventDefault();
+            isValid = false;
             if(propFormulario.elementos[i].parentElement.children.length < 3){
                 propFormulario.error = document.createElement('p');
                 propFormulario.textoError = document.createTextNode('Por favor llena el campo con tu '+ propFormulario.elementos[i].name);
@@ -39,13 +41,19 @@ validarInputs: function(event){
 
                 propFormulario.elementos[i].parentElement.appendChild(propFormulario.error);
             }
-    }else{
-        if(propFormulario.elementos[i].parentElement.children.length >= 3){
-            propFormulario.error = propFormulario.elementos[i].parentElement.getElementsByTagName('p')[0];
-            propFormulario.elementos[i].parentElement.removeChild(propFormulario.error);
-        }
+        }else{
+            if(propFormulario.elementos[i].parentElement.children.length >= 3){
+                propFormulario.error = propFormulario.elementos[i].parentElement.getElementsByTagName('p')[0];
+                propFormulario.elementos[i].parentElement.removeChild(propFormulario.error);
+            }
 
-        }
+            }
+    }
+    if (isValid) {
+        
+        
+            propFormulario.formulario.reset(); // Limpia el formulario
+        
     }
 }
 
