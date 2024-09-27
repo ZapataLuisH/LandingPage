@@ -98,6 +98,7 @@ a:hover {
   margin: 1rem;
 }
 .menu-bar-pc .menu-principal a .top-redes {
+  visibility: hidden;
   padding: 0 0.5625rem;
 }
 .menu-bar-movil {
@@ -448,7 +449,6 @@ a:hover {
   width: 30%;
   text-align: center;
   font-size: 2.1875rem;
-  display: none;
 }
 .main .contacto .datos {
   padding: 5.625rem 0 11.875rem 0;
